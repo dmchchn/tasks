@@ -13,3 +13,12 @@
 
 command1 = "switchport trunk allowed vlan 1,2,3,5,8"
 command2 = "switchport trunk allowed vlan 1,3,8,9"
+# Solution
+cmd1 = command1.split()[-1].split(',')
+cmd2 = command2.split()[-1].split(',')
+cmd1 = set(cmd1)
+cmd2 = set(cmd2)
+commands=cmd1.intersection(cmd2)
+result=list(commands)
+result.sort()
+result
