@@ -21,4 +21,4 @@ cmd2 = set(cmd2)
 commands=cmd1.intersection(cmd2)
 result=list(commands)
 result.sort()
-result
+print(result)

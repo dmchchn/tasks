@@ -10,3 +10,9 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+# Solution
+machex=mac.replace(':','')
+macint=bin(int(machex, 16))
+result=macint.replace('0b','')
+print(result)
+
