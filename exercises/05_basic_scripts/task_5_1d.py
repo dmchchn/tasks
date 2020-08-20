@@ -17,7 +17,7 @@ $ python task_5_1d.py
 Все задания надо выполнять используя только пройденные темы.
 То есть эту задачу можно решить без использования условия if.
 """
-
+name = input('Введите имя устройства: ')
 london_co = {
     "r1": {
         "location": "21 New Globe Walk",
@@ -43,3 +43,7 @@ london_co = {
         "routing": True,
     },
 }
+a = list(london_co[name].keys())
+a = ','.join(a)
+key = input('Введите имя параметра ' + '(' + a + ')' +':' + ' ')
+print(london_co[name].get(key.lower(),'Такого параметра нет'))
