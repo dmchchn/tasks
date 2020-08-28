@@ -10,6 +10,8 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 То есть эту задачу можно решить без использования условия if и циклов for/while.
 """
+type_int = input('Введите тип интерфейса (access/trunk): ')
+interface = input('Введите номер интерфейса в формате Fa*/*,Gi*/*: ')
 
 access_template = [
     "switchport mode access",
@@ -18,9 +20,18 @@ access_template = [
     "spanning-tree portfast",
     "spanning-tree bpduguard enable",
 ]
-
 trunk_template = [
     "switchport trunk encapsulation dot1q",
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+
+access_input = 'Введите номер VLAN: '
+trunk_input = 'Введите разрешенные VLANы: '
+inputs = dict(access = access_input, trunk = trunk_input)
+
+templates = dict(access = access_template,trunk = trunk_template)
+vlan = input(inputs[type_int])
+
+print('interface {}'.format(interface))
+print('\n'.join(templates[type_int]).format(vlan))
